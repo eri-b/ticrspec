@@ -1,4 +1,5 @@
 class Board
+  attr_accessor :board, :score
 
   def initialize
     @board = Hash.new
@@ -124,7 +125,7 @@ class Board
   def winner
 
     @score.each do |key, value|
-      
+
       if value == "XXX"
         puts ""
         print_board
