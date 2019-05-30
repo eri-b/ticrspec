@@ -29,11 +29,11 @@ require_relative '../lib/board'
 
 RSpec.describe Board do
   describe "#score" do
-    let(:game) {Board.new}
+    #let(:game) {Board.new}
 
     it "test 1" do
 
-
+      game = Board.new
       game.score["row 1"] = "OOO"
 
       expect(game.game_over).to eql(true)
