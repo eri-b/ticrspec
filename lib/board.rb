@@ -109,6 +109,7 @@ class Board
   # private
 
   def game_over
+
     if winner == true
       return true
     elsif @board.length >= 9
@@ -121,7 +122,9 @@ class Board
   end
 
   def winner
+
     @score.each do |key, value|
+      
       if value == "XXX"
         puts ""
         print_board
