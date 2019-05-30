@@ -106,7 +106,7 @@ class Board
     puts "game over"
   end
 
-  private
+  # private
 
   def game_over
     if winner == true

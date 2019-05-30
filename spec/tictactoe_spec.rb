@@ -1,9 +1,9 @@
 require_relative '../lib/board'
 # require_relative '../bin/game'
 
-RSpec.describe "TicTacToe" do
+# RSpec.describe 'Board' do
 
-  describe "#game_over" do
+#   describe "#game_over" do
 
   #   it "returns true if draw (full board)" do
   #     @board = {}
@@ -17,13 +17,25 @@ RSpec.describe "TicTacToe" do
   #     expect(game_over).to eql(true)
   #   end
 
-    it "returns true if winner and partial board" do
-      @board = {"11":"X", "12":"X", "13":"X"}
-      @score = {"row 1": "XXX"}
-      expect(game_over).to eql(true)
+#     it "returns true if winner and partial board" do
+#       @board = {"11":"X", "12":"X", "13":"X"}
+#       @score = {"row 1": "XXX"}
+#       expect(Board.game_over).to eql(true)
+#     end
+
+#   end
+
+
+# end
+
+RSpec.describe Board do
+  describe "#score" do
+    it "returns 0 for an all gutter game" do
+      game = Board.new
+      @board["11"] = "X"
+      @board["12"] = "X"
+      @board["13"] = "X"
+      expect(game.game_over).to eql(true)
     end
-
   end
-
-
 end
