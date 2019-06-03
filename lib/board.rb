@@ -1,4 +1,7 @@
+require_relative 'ui'
+
 class Board
+  include Ui
   attr_accessor :values, :score
 
   def initialize

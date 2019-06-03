@@ -13,14 +13,14 @@ RSpec.describe Board do
     let(:player2) {Player.new('Marcos', "O", new_board)}
     let(:game) {Game.new(player1, player2, new_board)}
 
-    it "O wins" do
+    it "Player O wins" do
       new_board.values = {"11" => "O", "12" => "O", "13" => "O"}
       new_board.score["row 1"] = "OOO"
 
       expect(game.game_on).to eql(false)
     end
 
-    it "X wins" do
+    it "Player X wins" do
       new_board.values = {"31" => "X", "32" => "X", "33" => "X"}
       new_board.score["row 3"] = "XXX"
 
@@ -51,26 +51,5 @@ RSpec.describe Board do
 
   end
 
-  describe "Critical Methods" do
-    let(:new_board) {Board.new}
-    let(:player1) {Player.new('Eric', "X", new_board)}
-    let(:player2) {Player.new('Marcos', "O", new_board)}
-    let(:game) {Game.new(player1, player2, new_board)}
-
-    it "Check Format for 3 digits" do
-      expect(game.format_ok?("123")).to eql(nil)
-    end
-
-    it "Check Format for wrong digits" do
-      expect(game.format_ok?("44")).to eql(nil)
-    end
-
-    it "Check Format for right digits" do
-      expect(game.format_ok?("11")).to eql(true)
-    end
-
-
-
-  end
 
 end
