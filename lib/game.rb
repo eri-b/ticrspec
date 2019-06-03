@@ -19,7 +19,7 @@ class Game
       after_game
     end
 
-    private
+    # private
 
     def play(counter)
         # take the current player move
@@ -46,7 +46,7 @@ class Game
       if @board.values.length >= 9
         print_board(@board)
         draw_message
-        return true 
+        return true
       end
     end
 
