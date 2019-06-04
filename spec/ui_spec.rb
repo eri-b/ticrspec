@@ -14,14 +14,17 @@ RSpec.describe Ui do
     let(:game) {Game.new(player1, player2, new_board)}
 
     it "Check Format for 3 digits" do
+      game.separator
       expect(game.format_ok?("123")).to eql(nil)
     end
 
     it "Check Format for wrong digits" do
+      game.separator
       expect(game.format_ok?("44")).to eql(nil)
     end
 
     it "Check Format for right digits" do
+      game.separator
       expect(game.format_ok?("11")).to eql(true)
     end
 
@@ -34,11 +37,13 @@ RSpec.describe Ui do
     let(:game) {Game.new(player1, player2, new_board)}
 
     it "Position taken" do
+      game.separator
       new_board.values = {"11" => "O", "12" => "O", "13" => "O"}
       expect(new_board.position_ok?("11")).to eql(nil)
     end
 
     it "Position available" do
+      game.separator
       new_board.values = {"11" => "O", "12" => "O", "13" => "O"}
       expect(new_board.position_ok?("21")).to eql(true)
     end

@@ -14,61 +14,73 @@ RSpec.describe Board do
     let(:game) {Game.new(player1, player2, new_board)}
 
     it "Winning Board 1" do
+      game.separator
       new_board.values = {"11" => "O", "12" => "O", "13" => "O"}
       new_board.score["row 1"] = "OOO"
       expect(game.game_on).to eql(false)
     end
 
     it "Winning Board 2" do
+      game.separator
       new_board.values = {"21" => "X", "22" => "X", "23" => "X"}
       new_board.score["row 2"] = "XXX"
       expect(game.game_on).to eql(false)
     end
 
     it "Winning Board 3" do
+      game.separator
       new_board.values = {"31" => "X", "32" => "X", "33" => "X"}
       new_board.score["row 3"] = "XXX"
       expect(game.game_on).to eql(false)
     end
 
     it "Winning Board 4" do
+      game.separator
       new_board.values = {"11" => "X", "21" => "X", "31" => "X"}
       new_board.score["col 1"] = "XXX"
       expect(game.game_on).to eql(false)
     end
 
     it "Winning Board 5" do
+      game.separator
       new_board.values = {"12" => "X", "22" => "X", "32" => "X"}
       new_board.score["col 2"] = "XXX"
       expect(game.game_on).to eql(false)
     end
 
     it "Winning Board 6" do
+      game.separator
       new_board.values = {"13" => "X", "23" => "X", "33" => "X"}
       new_board.score["col 3"] = "XXX"
       expect(game.game_on).to eql(false)
     end
 
     it "Winning Board 7" do
+      game.separator
       new_board.values = {"11" => "X", "22" => "X", "33" => "X"}
       new_board.score["diag 1"] = "XXX"
       expect(game.game_on).to eql(false)
     end
 
     it "Winning Board 8" do
+      game.separator
       new_board.values = {"13" => "X", "22" => "X", "31" => "X"}
       new_board.score["diag 2"] = "XXX"
       expect(game.game_on).to eql(false)
     end
 
     it "Game not over" do
+      game.separator
       new_board.values = {"31" => "X", "32" => "O", "33" => "X"}
       new_board.score["row 3"] = "XOX"
+
+      puts game.print_board(new_board)
 
       expect(game.game_on).to be_truthy
     end
 
     it "Game is draw" do
+      game.separator
       new_board.values = {"11" => "X", "12" => "O", "13" => "X", "21" => "O", "22" => "X", "23" => "O", "31" => "O", "32" => "X", "33" => "O"}
       new_board.score["row 1"] = "XOX"
       new_board.score["row 2"] = "OXO"

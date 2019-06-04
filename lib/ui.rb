@@ -96,5 +96,11 @@ module Ui
     puts "The game is draw!"
   end
 
+  def separator
+    puts "\n"
+    puts "-----------------------------------------------------------------------------"
+    puts "\n"
+  end
+
 
 end #module

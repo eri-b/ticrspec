@@ -37,8 +37,7 @@ class Game
       @board.score.each do |key, value|
           game_over(@player1, @board) if value == "XXX"
           game_over(@player2, @board) if value == "OOO"
-          return false if value == "XXX" || value == "OOO"
-          return false if game_draw
+          return false if value == "XXX" || value == "OOO" || game_draw
       end
     end
 
@@ -46,7 +45,7 @@ class Game
       if @board.values.length >= 9
         print_board(@board)
         draw_message
-        return true
+        return true 
       end
     end
 
