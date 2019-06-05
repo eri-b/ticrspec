@@ -24,6 +24,7 @@ class Game
     def play(counter)
         # take the current player move
         player = turn(counter)
+        p player
         index = get_move(@board, player)
         index = check_move(@board, index)
         player.move(index)
@@ -45,7 +46,7 @@ class Game
       if @board.values.length >= 9
         print_board(@board)
         draw_message
-        return true 
+        return true
       end
     end
 
